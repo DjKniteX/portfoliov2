@@ -1,5 +1,21 @@
 $primary-color: #444;
 $secondary-color: #EECE1A;
+$show-home-image: true;
+$home-image: url('../img/lightBulb.jpg');
+$background-opacity: 0.9;
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+@mixin background {
+        &#bg-img {
+            background: $home-image;
+            background-attachment: fixed;
+            background-size: cover;
+        
+    }
+}
 
 html {
     font-size: 10px;
@@ -10,7 +26,8 @@ html {
 }
 
 body {
-    background: $primary-color;
+    @include background;
+    background-image: $home-image;
     color: #fff;
     height: 100%;
     margin: 0;
@@ -59,6 +76,18 @@ main {
 
         a {
             padding: 0.4rem;
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
+
+
+    &#home {
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
         }
     }
 }
