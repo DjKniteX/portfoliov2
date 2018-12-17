@@ -1,21 +1,5 @@
-$primary-color: #444;
-$secondary-color: #EECE1A;
-$show-home-image: true;
-$home-image: url('../img/lightBulb.jpg');
-$background-opacity: 0.9;
-
-@mixin easeOut {
-    transition: all 0.5s ease-out;
-}
-
-@mixin background {
-        &#bg-img {
-            background: $home-image;
-            background-attachment: fixed;
-            background-size: cover;
-        
-    }
-}
+@import 'config';
+@import 'menu';
 
 html {
     font-size: 10px;
@@ -26,7 +10,8 @@ html {
 }
 
 body {
-    @include background;
+    background-size: cover;
+    background-attachment: fixed;
     background-image: $home-image;
     color: #fff;
     height: 100%;
